@@ -1,3 +1,5 @@
+import 'dart:ui_web';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
@@ -20,10 +22,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final url = PathUrlStrategy().getPath();
-    final url2 = path.getPath();
-    print(url);
-    print(url2);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -31,7 +29,7 @@ class MainApp extends StatelessWidget {
         fontFamily: 'Outfit',
         scaffoldBackgroundColor: Colors.grey.shade200,
       ),
-      initialRoute: '/',
+      initialRoute: path.getPath(),
       routes: {
         '/': (context) => const Home(),
         '/contact-us': (context) => const ContactUs(),
