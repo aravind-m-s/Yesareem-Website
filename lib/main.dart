@@ -8,8 +8,10 @@ import 'package:yesareem_website/Screens/privacy_policy/privacy_policy.dart';
 import 'package:yesareem_website/Screens/refund_and_cancellation/refund_and_cancellation.dart';
 import 'package:yesareem_website/Screens/terms%20and%20conditions/terms_and_conditions.dart';
 
+const path = PathUrlStrategy();
+
 void main() {
-  usePathUrlStrategy();
+  setUrlStrategy(path);
   runApp(const MainApp());
 }
 
@@ -18,6 +20,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final url = PathUrlStrategy().getPath();
+    final url2 = path.getPath();
+    print(url);
+    print(url2);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
