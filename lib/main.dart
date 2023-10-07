@@ -8,7 +8,7 @@ import 'package:yesareem_website/Screens/privacy_policy/privacy_policy.dart';
 import 'package:yesareem_website/Screens/refund_and_cancellation/refund_and_cancellation.dart';
 import 'package:yesareem_website/Screens/terms%20and%20conditions/terms_and_conditions.dart';
 
-const path = PathUrlStrategy();
+PathUrlStrategy path = PathUrlStrategy();
 
 void main() {
   setUrlStrategy(path);
