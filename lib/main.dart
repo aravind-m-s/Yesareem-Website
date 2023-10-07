@@ -54,6 +54,11 @@ class MainApp extends StatelessWidget {
           builder: (_) => const Home(),
         ); // you can do this in `onUnknownRoute` too
       },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (_) => const Home(),
+        );
+      },
     );
   }
 }
