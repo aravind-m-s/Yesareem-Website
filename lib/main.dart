@@ -13,7 +13,7 @@ import 'package:yesareem_website/Screens/terms%20and%20conditions/terms_and_cond
 PathUrlStrategy path = PathUrlStrategy();
 
 void main() {
-  setUrlStrategy(path);
+  // setUrlStrategy(path);
   runApp(const MainApp());
 }
 
@@ -29,7 +29,8 @@ class MainApp extends StatelessWidget {
         fontFamily: 'Outfit',
         scaffoldBackgroundColor: Colors.grey.shade200,
       ),
-      initialRoute: path.getPath(),
+      // initialRoute: path.getPath(),
+      initialRoute: '/',
       routes: {
         '/': (context) => const Home(),
         '/contact-us': (context) => const ContactUs(),
