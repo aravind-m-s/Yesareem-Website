@@ -24,18 +24,22 @@ class _ContactUsState extends State<ContactUs> {
   final TextEditingController contentController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.primaryColors,
-      key: scaffoldKey,
-      appBar: PreferredSize(
-        preferredSize: const Size(double.infinity, 75),
-        child: SearchAndHamburgerWidget(
-          scaffoldKey: scaffoldKey,
-          eventsKey: scaffoldKey,
-          aboutKey: scaffoldKey,
+    return Title(
+      color: Colors.black,
+      title: "Contact Us",
+      child: Scaffold(
+        backgroundColor: AppColors.primaryColors,
+        key: scaffoldKey,
+        appBar: PreferredSize(
+          preferredSize: const Size(double.infinity, 75),
+          child: SearchAndHamburgerWidget(
+            scaffoldKey: scaffoldKey,
+            eventsKey: scaffoldKey,
+            aboutKey: scaffoldKey,
+          ),
         ),
+        body: mainBackDrop(context),
       ),
-      body: mainBackDrop(context),
     );
   }
 

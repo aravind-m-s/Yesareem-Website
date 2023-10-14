@@ -94,6 +94,7 @@ class SearchAndHamburgerWidget extends StatelessWidget {
           DropdownButtonHideUnderline(
             child: DropdownButton(
               value: 'About Us',
+              dropdownColor: AppColors.primaryColors,
               items: [
                 DropdownMenuItem(
                   value: 'About Us',

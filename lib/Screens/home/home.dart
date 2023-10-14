@@ -22,69 +22,78 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      drawer: DraweWidget(scrollController: scrollController),
-      body: Column(
-        children: [
-          appBar(
-              context: context,
-              scaffoldKey: scaffoldKey,
-              eventsKey: eventsKey,
-              aboutKey: aboutKey),
-          Expanded(
-            child: GestureDetector(
-              onTap: () {
-                print(MediaQuery.of(context).size.width);
-              },
-              child: ScrollConfiguration(
-                behavior:
-                    ScrollConfiguration.of(context).copyWith(scrollbars: false),
-                child: ListView(
-                  shrinkWrap: true,
-                  controller: scrollController,
-                  // padding: const EdgeInsets.only(top: 24),
-                  children: [
-                    mainBackDrop(context),
-                    Events(
-                      key: eventsKey,
+    return Title(
+      color: Colors.black,
+      title: "Yesareem",
+      child: Scaffold(
+        key: scaffoldKey,
+        drawer: DraweWidget(scrollController: scrollController),
+        body: Column(
+          children: [
+            appBar(
+                context: context,
+                scaffoldKey: scaffoldKey,
+                eventsKey: eventsKey,
+                aboutKey: aboutKey),
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  print(MediaQuery.of(context).size.width);
+                },
+                child: ScrollConfiguration(
+                  behavior: ScrollConfiguration.of(context)
+                      .copyWith(scrollbars: false),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      // padding: const EdgeInsets.only(top: 24),
+                      children: [
+                        mainBackDrop(context),
+                        Events(
+                          key: eventsKey,
+                        ),
+                        // Carousel(key: eventsKey),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                              padding: const EdgeInsets.only(bottom: 12),
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: AppColors.primaryColors)),
+                              child: const SlidingText()),
+                        ),
+                        AboutUs(
+                          key: aboutKey,
+                        ),
+                        // const TabsAndLogin()
+                        Courses(),
+                        Divider(
+                          color: AppColors.primaryColors,
+                        ),
+                        AppBar(
+                          centerTitle: true,
+                          toolbarHeight: 90,
+                          backgroundColor: Colors.grey.shade200,
+                          elevation: 0,
+                          leadingWidth: 200,
+                          automaticallyImplyLeading: false,
+                          title: MediaQuery.of(context).size.width < 620
+                              ? logoWidget(context)
+                              : titleWidget(),
+                          leading: MediaQuery.of(context).size.width < 620
+                              ? null
+                              : logoWidget(context),
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                      ],
                     ),
-                    // Carousel(key: eventsKey),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                          padding: const EdgeInsets.only(bottom: 12),
-                          decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: AppColors.primaryColors)),
-                          child: const SlidingText()),
-                    ),
-                    AboutUs(
-                      key: aboutKey,
-                    ),
-                    // const TabsAndLogin()
-                    Courses(),
-                    Divider(
-                      color: AppColors.primaryColors,
-                    ),
-                    AppBar(
-                      centerTitle: true,
-                      toolbarHeight: 90,
-                      backgroundColor: Colors.grey.shade200,
-                      elevation: 0,
-                      leadingWidth: 200,
-                      title: titleWidget(),
-                      leading: logoWidget(context),
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
