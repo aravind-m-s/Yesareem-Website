@@ -30,6 +30,7 @@ class MainApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.grey.shade200,
       ),
       initialRoute: path.getPath(),
+      title: "Yesareem",
       routes: {
         '/': (context) => const Home(),
         '/contact-us': (context) => const ContactUs(),

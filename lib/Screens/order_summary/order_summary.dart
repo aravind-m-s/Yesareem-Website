@@ -11,8 +11,12 @@ class OrderSummaryPage extends StatefulWidget {
 class _OrderSummaryPageState extends State<OrderSummaryPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: mainBackDrop(context),
+    return Title(
+      color: Colors.black,
+      title: "Order Summary",
+      child: Scaffold(
+        body: mainBackDrop(context),
+      ),
     );
   }
 
