@@ -17,7 +17,6 @@ class AppUtils {
         borderSide: BorderSide(color: AppColors.greyColor),
       ),
       counterText: '',
-      
     );
   }
 
@@ -53,6 +52,17 @@ class AppUtils {
       12: "Dec",
     };
     return monthMap[month];
+  }
+
+  static defaultGradient() {
+    return const LinearGradient(
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight,
+      colors: [
+        Color(0xFF4B69E2),
+        Color(0xFF1D2F82),
+      ],
+    );
   }
 
   static validEmail(String email) {
