@@ -33,9 +33,51 @@ class Home extends StatelessWidget {
             signUpSection(),
             startupMissions(),
             Container(
+              alignment: Alignment.center,
               width: double.infinity,
               height: 200,
-              color: Color(0xFFe9e3e2),
+              color: const Color(0xFFe9e3e2),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/contact-us');
+                        },
+                        child: const Text('Contact Us'),
+                      ),
+                      const SizedBox(width: 50),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/website-policies');
+                        },
+                        child: const Text('Website Policies'),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "YESAREEM SOLUTIONS PRIVATE LIMITED",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  )
+                ],
+              ),
             )
           ],
         ),
@@ -51,7 +93,7 @@ class Home extends StatelessWidget {
         Container(
           width: 200,
           height: 200,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('images/start_up_india.png'),
             ),
@@ -60,7 +102,7 @@ class Home extends StatelessWidget {
         Container(
           width: 300,
           height: 300,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('images/kerala_startup_mission.png'),
             ),
@@ -69,7 +111,7 @@ class Home extends StatelessWidget {
         Container(
           width: 200,
           height: 200,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('images/govt_ind_mca.png'),
             ),
