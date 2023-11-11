@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:yesareem_website/Constants/app_colors.dart';
 import 'package:http/http.dart' as http;
 import 'package:yesareem_website/Constants/app_utils.dart';
-import 'package:yesareem_website/Screens/home/search_bar.dart';
 
 class ContactUs extends StatefulWidget {
   const ContactUs({super.key});
@@ -30,14 +29,6 @@ class _ContactUsState extends State<ContactUs> {
       child: Scaffold(
         backgroundColor: AppColors.primaryColors,
         key: scaffoldKey,
-        appBar: PreferredSize(
-          preferredSize: const Size(double.infinity, 75),
-          child: SearchAndHamburgerWidget(
-            scaffoldKey: scaffoldKey,
-            eventsKey: scaffoldKey,
-            aboutKey: scaffoldKey,
-          ),
-        ),
         body: mainBackDrop(context),
       ),
     );
