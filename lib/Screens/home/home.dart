@@ -8,79 +8,131 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: PreferredSize(
-        preferredSize: Size(MediaQuery.of(context).size.width, 150),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+    return websiteScaffold(context);
+  }
+
+  Widget websiteScaffold(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        print(MediaQuery.of(context).size.width);
+      },
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: PreferredSize(
+          preferredSize: Size(MediaQuery.of(context).size.width, 150),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              children: [
+                topWidget(context),
+                appBarItems(context),
+              ],
+            ),
+          ),
+        ),
+        body: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              topWidget(context),
-              appBarItems(context),
+              backdrop(context),
+              aboutUs(context),
+              const SizedBox(height: 200),
+              courses(context),
+              signUpSection(context),
+              startupMissions(),
+              footer(context)
             ],
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            backdrop(context),
-            aboutUs(context),
-            const SizedBox(height: 200),
-            courses(context),
-            signUpSection(),
-            startupMissions(),
-            Container(
-              alignment: Alignment.center,
-              width: double.infinity,
-              height: 200,
-              color: const Color(0xFFe9e3e2),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pushNamed('/contact-us');
-                        },
-                        child: const Text('Contact Us'),
-                      ),
-                      const SizedBox(width: 50),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pushNamed('/website-policies');
-                        },
-                        child: const Text('Website Policies'),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "YESAREEM SOLUTIONS PRIVATE LIMITED",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black,
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  )
-                ],
+    );
+  }
+
+  Container footer(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      width: double.infinity,
+      height: 200,
+      color: const Color(0xFFe9e3e2),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/contact-us');
+                },
+                child: const Text('Contact Us'),
               ),
-            )
-          ],
-        ),
+              const SizedBox(width: 50),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/website-policies');
+                },
+                child: const Text('Website Policies'),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/terms-and-conditions');
+                },
+                child: const Text('Terms and Conditions'),
+              ),
+              const SizedBox(width: 50),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/privacy-policy');
+                },
+                child: const Text('Privacy Policy'),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/shipping-and-refund');
+                },
+                child: const Text('Shipping and Return'),
+              ),
+              // const SizedBox(width: 50),
+              // TextButton(
+              //   onPressed: () {
+              //     Navigator.of(context).pushNamed('/privacy-policy');
+              //   },
+              //   child: const Text('Privacy Policy'),
+              // ),
+            ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "YESAREEM SOLUTIONS PRIVATE LIMITED",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                ),
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          )
+        ],
       ),
     );
   }
@@ -121,13 +173,13 @@ class Home extends StatelessWidget {
     );
   }
 
-  Row signUpSection() {
+  Row signUpSection(context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
-          height: 500,
-          width: 500,
+          height: MediaQuery.of(context).size.width / 4,
+          width: MediaQuery.of(context).size.width / 4,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('images/sign_up_image.png'),
@@ -150,7 +202,7 @@ class Home extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Row(
+                Row(
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -168,7 +220,7 @@ class Home extends StatelessWidget {
                           height: 8,
                         ),
                         SizedBox(
-                          width: 750,
+                          width: MediaQuery.of(context).size.width / 3,
                           child: TextField(
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
@@ -199,7 +251,7 @@ class Home extends StatelessWidget {
                           height: 8,
                         ),
                         SizedBox(
-                          width: 200,
+                          width: MediaQuery.of(context).size.width / 8,
                           child: TextField(
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
@@ -215,7 +267,7 @@ class Home extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -231,7 +283,7 @@ class Home extends StatelessWidget {
                           height: 8,
                         ),
                         SizedBox(
-                          width: 350,
+                          width: MediaQuery.of(context).size.width / 6.45,
                           child: TextField(
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
@@ -243,7 +295,7 @@ class Home extends StatelessWidget {
                     const SizedBox(
                       width: 50,
                     ),
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -259,7 +311,7 @@ class Home extends StatelessWidget {
                           height: 8,
                         ),
                         SizedBox(
-                          width: 350,
+                          width: MediaQuery.of(context).size.width / 6.45,
                           child: TextField(
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
@@ -274,7 +326,7 @@ class Home extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 28.0),
                       child: Container(
-                        width: 200,
+                        width: MediaQuery.of(context).size.width / 8,
                         height: 50,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
@@ -585,35 +637,41 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 0,
-            right: 0,
-            child: Container(
-              width: MediaQuery.of(context).size.width / 2.2,
-              height: MediaQuery.of(context).size.width / 2.2 * 9 / 16,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage('images/people_img.png'),
+          MediaQuery.of(context).size.width < 800
+              ? const SizedBox()
+              : Positioned(
+                  bottom: MediaQuery.of(context).size.width < 1300
+                      ? 50
+                      : MediaQuery.of(context).size.width < 100
+                          ? 100
+                          : 0,
+                  right: 0,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 2.2,
+                    height: MediaQuery.of(context).size.width / 2.2 * 9 / 16,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('images/people_img.png'),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ),
           Positioned(
             top: 175,
-            left: 200,
+            left: MediaQuery.of(context).size.width / 8,
             child: Text.rich(
-              const TextSpan(
+              TextSpan(
                 text: "Let's grow up\n with",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: 60,
+                  fontSize: MediaQuery.of(context).size.width * 0.08,
                 ),
                 children: [
                   TextSpan(
                     text: '"yesareem"',
                     style: TextStyle(
-                      fontSize: 80,
+                      fontSize: MediaQuery.of(context).size.width * 0.07,
                       fontWeight: FontWeight.w600,
                       fontStyle: FontStyle.italic,
                     ),
