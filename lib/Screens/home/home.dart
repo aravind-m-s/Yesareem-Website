@@ -671,7 +671,7 @@ class Home extends StatelessWidget {
                   TextSpan(
                     text: '"yesareem"',
                     style: TextStyle(
-                      fontSize: 80
+                      fontSize: 80,
                       fontWeight: FontWeight.w600,
                       fontStyle: FontStyle.italic,
                     ),
