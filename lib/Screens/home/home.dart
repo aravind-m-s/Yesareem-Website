@@ -665,13 +665,13 @@ class Home extends StatelessWidget {
                 text: "Let's grow up\n with",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: MediaQuery.of(context).size.width * 0.08,
+                  fontSize: 60,
                 ),
                 children: [
                   TextSpan(
                     text: '"yesareem"',
                     style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.width * 0.07,
+                      fontSize: 80
                       fontWeight: FontWeight.w600,
                       fontStyle: FontStyle.italic,
                     ),
