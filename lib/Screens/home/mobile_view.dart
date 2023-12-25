@@ -344,20 +344,27 @@ Widget pictureWidget() {
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 8),
-        Container(
-          alignment: Alignment.center,
-          width: 175,
-          height: 50,
-          decoration: BoxDecoration(
-            gradient: AppUtils.defaultGradient(),
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: const Text(
-            "Register Now",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w500,
-              fontSize: 16,
+        GestureDetector(
+          onTap: () {
+            controller.animateTo(controller.position.maxScrollExtent,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOut);
+          },
+          child: Container(
+            alignment: Alignment.center,
+            width: 175,
+            height: 50,
+            decoration: BoxDecoration(
+              gradient: AppUtils.defaultGradient(),
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: const Text(
+              "Register Now",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 16,
+              ),
             ),
           ),
         )
