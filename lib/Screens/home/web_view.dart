@@ -31,6 +31,7 @@ AppBar appBar(BuildContext context) {
     surfaceTintColor: Colors.transparent,
     foregroundColor: Colors.white,
     leadingWidth: 50,
+    elevation: 0,
     title: GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: () {
