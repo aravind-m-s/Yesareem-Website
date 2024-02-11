@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:yesareem_website/Constants/app_colors.dart';
 import 'package:yesareem_website/Constants/app_utils.dart';
+import 'dart:html' as html;
 
 ScrollController controller = ScrollController();
 
 Widget websiteScaffold(BuildContext context) {
   return Scaffold(
-    backgroundColor: Colors.white,
+    backgroundColor: AppColors.primaryColors,
     appBar: appBar(context),
-    body: SingleChildScrollView(
-      controller: controller,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          backdrop(context),
-          aboutUs(context),
-          const SizedBox(height: 100),
-          courses(context),
-          signUpSection(context),
-          startupMissions(),
-          footer(context)
-        ],
+    body: Container(
+      color: Colors.white,
+      child: SingleChildScrollView(
+        controller: controller,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            backdrop(context),
+            aboutUs(context),
+            const SizedBox(height: 100),
+            courses(context),
+            signUpSection(context),
+            startupMissions(),
+            footer(context)
+          ],
+        ),
       ),
     ),
   );
@@ -128,7 +132,6 @@ AppBar appBar(BuildContext context) {
       ),
       const SizedBox(width: 16)
     ],
-    elevation: 0,
     backgroundColor: AppColors.primaryColors,
   );
 }
@@ -728,9 +731,10 @@ Widget backdrop(BuildContext context) {
                 const SizedBox(height: 8),
                 GestureDetector(
                   onTap: () {
-                    controller.animateTo(controller.position.maxScrollExtent,
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.easeInOut);
+                    // controller.animateTo(controller.position.maxScrollExtent,
+                    //     duration: const Duration(milliseconds: 500),
+                    //     curve: Curves.easeInOut);
+                    downloadFile('Yesareem Learning App.apk');
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -741,7 +745,7 @@ Widget backdrop(BuildContext context) {
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: const Text(
-                      "Register Now",
+                      "Download The App",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
@@ -773,4 +777,10 @@ Widget backdrop(BuildContext context) {
       ],
     ),
   );
+}
+
+void downloadFile(String url) {
+  html.AnchorElement anchorElement = html.AnchorElement(href: url);
+  anchorElement.download = url;
+  anchorElement.click();
 }
