@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yesareem_website/Constants/app_colors.dart';
 import 'package:yesareem_website/Constants/app_utils.dart';
+import 'package:yesareem_website/Screens/home/web_view.dart';
 
 ScrollController controller = ScrollController();
 
@@ -622,9 +623,10 @@ Widget backdrop(BuildContext context) {
               const SizedBox(height: 8),
               GestureDetector(
                 onTap: () {
-                  controller.animateTo(controller.position.maxScrollExtent,
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeInOut);
+                  // controller.animateTo(controller.position.maxScrollExtent,
+                  //     duration: const Duration(milliseconds: 500),
+                  //     curve: Curves.easeInOut);
+                  downloadFile('Yesareem Learning App.apk');
                 },
                 child: Container(
                   alignment: Alignment.center,
@@ -635,7 +637,7 @@ Widget backdrop(BuildContext context) {
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: const Text(
-                    "Register Now",
+                    "Download The App",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
