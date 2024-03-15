@@ -151,13 +151,13 @@
                 </script>
                 
             </div> -->
-        <div class="row">
+        <div class="row p-5">
             <div class="col-12">
                 <h2 class="contact-title">Get in Touch</h2>
             </div>
             <div class="col-lg-8">
-                <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-                    novalidate="novalidate">
+                <form class="form-contact contact_form" id="contactForm" novalidate="novalidate"
+                    onsubmit="handleSubmit(this)">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
@@ -189,7 +189,7 @@
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                        <button type="submit" class="button boxed-btn">Send</button>
                     </div>
                 </form>
             </div>
@@ -366,6 +366,51 @@
 <!-- Jquery Plugins, main Jquery -->
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    let url = 'https://script.google.com/macros/s/AKfycbyOpi-OkzJv1_TkUa6OKrRv2jsi_NbKxXZyw6tq7p751vaGe2ZOP_uu50iogwjhwFkTFA/exec';
+
+    function handleSubmit(form) {
+        var formData = new FormData(form);
+        var currentDate = new Date();
+
+        var year = currentDate.getFullYear();
+        var month = currentDate.getMonth() + 1;
+        var day = currentDate.getDate();
+
+        var formattedDate = year + '-' + (month < 10 ? '0' + month : month) + '-' + (day < 10 ? '0' + day : day);
+        var currentTime = new Date();
+
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+        var formattedTime = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
+
+        url += `?date=${formattedDate}&time=${formattedTime}`
+
+
+        formData.forEach(function (value, key) {
+            console.log(key + ': ' + value);
+            url += `&${key}=${value}`;
+        });
+
+
+        axios.get(url)
+            .then(function (response) {
+                if (response.data.status == "SUCCESS") {
+                    form.reset();
+                }
+            })
+            .catch(function (error) {
+                console.error('Error fetching data:', error);
+            });
+
+
+
+    }
+</script>
 
 </body>
 
