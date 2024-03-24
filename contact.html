@@ -56,6 +56,8 @@
                                         <li class="active"><a href="index.html">Home</a></li>
                                         <li><a href="courses.html">Courses</a></li>
                                         <li><a href="about.html">About</a></li>
+                                        <li><a href="./assets/files/Yesareem Learning App.apk"
+                                                download="Yesareem Learning App">Download</a></li>
                                         <!-- <li><a href="#">Blog</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">Blog</a></li>
@@ -151,49 +153,51 @@
                 </script>
                 
             </div> -->
-        <div class="row p-5">
-            <div class="col-12">
-                <h2 class="contact-title">Get in Touch</h2>
+        <div class="row p-5 justify-content-center">
+            <div>
+                <div class="col-6">
+                    <h2 class="contact-title center-text">Get in Touch</h2>
+                </div>
+                <div class="col-lg-8">
+                    <form class="form-contact contact_form" id="contactForm" novalidate="novalidate"
+                        onsubmit="handleSubmit(this)">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
+                                        placeholder=" Enter Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input class="form-control valid" name="name" id="name" type="text"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
+                                        placeholder="Enter your name">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input class="form-control valid" name="email" id="email" type="email"
+                                        onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input class="form-control" name="subject" id="subject" type="text"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
+                                        placeholder="Enter Subject">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="submit" class="button boxed-btn">Send</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="col-lg-8">
-                <form class="form-contact contact_form" id="contactForm" novalidate="novalidate"
-                    onsubmit="handleSubmit(this)">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
-                                    placeholder=" Enter Message"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <input class="form-control valid" name="name" id="name" type="text"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
-                                    placeholder="Enter your name">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <input class="form-control valid" name="email" id="email" type="email"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
-                                    placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input class="form-control" name="subject" id="subject" type="text"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
-                                    placeholder="Enter Subject">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group mt-3">
-                        <button type="submit" class="button boxed-btn">Send</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-3 offset-lg-1">
+            <div class="col-lg-3 offset-lg-1 p-t-5">
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="ti-home"></i></span>
                     <div class="media-body">
@@ -218,6 +222,7 @@
             </div>
         </div>
         </div>
+
     </section>
     <!-- Contact Area End -->
 </main>
@@ -258,45 +263,38 @@
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Our solutions</h4>
+                                <h4>Our Exclusive Services</h4>
                                 <ul>
                                     <li><a href="#">Wings of Math</a></li>
                                     <li><a href="#">Miss/Mr yesareem</a></li>
                                     <li><a href="#">Dr.Yesareem</a></li>
-                                    <li><a href="#">Number System</a></li>
-                                    <li><a href="#">Geometry</a></li>
+
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
-                       <div class="single-footer-caption mb-50">
-                           <div class="footer-tittle">
-                               <h4>Support</h4>
-                               <ul>
-                                   <li><a href="#">Design & creatives</a></li>
-                                   <li><a href="#">Telecommunication</a></li>
-                                   <li><a href="#">Restaurant</a></li>
-                                   <li><a href="#">Programing</a></li>
-                                   <li><a href="#">Architecture</a></li>
-                               </ul>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                       <div class="single-footer-caption mb-50">
-                           <div class="footer-tittle">
-                               <h4>Company</h4>
-                               <ul>
-                                   <li><a href="#">Design & creatives</a></li>
-                                   <li><a href="#">Telecommunication</a></li>
-                                   <li><a href="#">Restaurant</a></li>
-                                   <li><a href="#">Programing</a></li>
-                                   <li><a href="#">Architecture</a></li>
-                               </ul>
-                           </div>
-                       </div>
-                   </div> -->
+                    <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Terms, Privacy and Shipping</h4>
+                                <ul>
+                                    <li><a href="./terms-and-conditions.html">Terms and Conditions</a></li>
+                                    <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+                                    <li><a href="./shipping-and-refund.html">Shipping and Refund</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Our Activities and Events</h4>
+                                <ul>
+                                    <li><a href="#">Math Lab</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -311,7 +309,6 @@
                                     Copyright &copy;
                                     <script>document.write(new Date().getFullYear());</script> All rights reserved |
                                     This Website by yesareem</a>
-
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 </p>
                             </div>
@@ -326,6 +323,14 @@
 <div id="back-top">
     <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
 </div>
+
+
+<style>
+    * {
+        overflow-x: hidden;
+    }
+</style>
+
 <!-- JS here -->
 
 <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
