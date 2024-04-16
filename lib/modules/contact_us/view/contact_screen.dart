@@ -135,7 +135,7 @@ class _ContactScreenState extends State<ContactScreen> {
                                       phone(),
                                     ],
                                   ),
-                            const SizedBox(height: 32),
+                            const SizedBox(height: 64),
                             TextField(
                               controller: nameController,
                               decoration: const InputDecoration(
@@ -316,67 +316,84 @@ class _ContactScreenState extends State<ContactScreen> {
   }
 
   Column topCard() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          'Let’s grow up \nwith Yesareem ',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 48,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        const SizedBox(height: 24),
-        const Text(
-          'Unleash the full spectrum of mathematical brilliance with our all-encompassing \nlearning app. From the basics to the most advanced concepts, we guide you through \nevery facet of mathematics, turning complexity into clarity, and making mastery \nachievable at every level.',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-        const SizedBox(height: 32),
-        Row(
-          children: [
-            Container(
-              alignment: Alignment.center,
-              width: 126,
-              height: 48,
-              decoration: BoxDecoration(
-                border: Border.all(width: 2, color: Colors.white),
-                borderRadius: BorderRadius.circular(4),
-              ),
-              child: const Text(
-                'Know More',
+        // const Text(
+        //   'Let’s grow up \nwith Yesareem ',
+        //   style: TextStyle(
+        //     color: Colors.white,
+        //     fontSize: 48,
+        //     fontWeight: FontWeight.w600,
+        //   ),
+        // ),
+        // const SizedBox(height: 24),
+        // const Text(
+        //   'Unleash the full spectrum of mathematical brilliance with our all-encompassing \nlearning app. From the basics to the most advanced concepts, we guide you through \nevery facet of mathematics, turning complexity into clarity, and making mastery \nachievable at every level.',
+        //   style: TextStyle(
+        //     color: Colors.white,
+        //     fontSize: 15,
+        //     fontWeight: FontWeight.w400,
+        //   ),
+        // ),
+        // const SizedBox(height: 32),
+        // Row(
+        //   children: [
+        //     Container(
+        //       alignment: Alignment.center,
+        //       width: 126,
+        //       height: 48,
+        //       decoration: BoxDecoration(
+        //         border: Border.all(width: 2, color: Colors.white),
+        //         borderRadius: BorderRadius.circular(4),
+        //       ),
+        //       child: const Text(
+        //         'Know More',
+        //         style: TextStyle(
+        //           color: Colors.white,
+        //           fontSize: 13,
+        //           fontWeight: FontWeight.w600,
+        //         ),
+        //       ),
+        //     ),
+        //     const SizedBox(width: 32),
+        //     Container(
+        //       alignment: Alignment.center,
+        //       width: 126,
+        //       height: 48,
+        //       decoration: BoxDecoration(
+        //         color: Colors.white,
+        //         borderRadius: BorderRadius.circular(4),
+        //       ),
+        //       child: const Text(
+        //         'Register Now!',
+        //         style: TextStyle(
+        //           color: AppColors.primaryColors,
+        //           fontSize: 13,
+        //           fontWeight: FontWeight.w600,
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
+        // const SizedBox(height: 32),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 50.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Contact Us",
                 style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w600,
                   color: Colors.white,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
                 ),
               ),
-            ),
-            const SizedBox(width: 32),
-            Container(
-              alignment: Alignment.center,
-              width: 126,
-              height: 48,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(4),
-              ),
-              child: const Text(
-                'Register Now!',
-                style: TextStyle(
-                  color: AppColors.primaryColors,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 32),
+            ],
+          ),
+        )
       ],
     );
   }
@@ -458,7 +475,7 @@ class Footer extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         rightOne(),
-        const SizedBox(width: 32),
+        const SizedBox(width: 75),
         rightTwo(),
       ],
     );
@@ -520,7 +537,8 @@ class Footer extends StatelessWidget {
                         style: TextStyle(
                           color: AppColors.primaryColors,
                           fontSize: 12,
-                          fontWeight: FontWeight.w600,
+                          fontFamily: "Inter",
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
@@ -574,19 +592,12 @@ class Footer extends StatelessWidget {
   }
 
   Column footerLeft() {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Yesareem Learning  ',
-          style: TextStyle(
-            color: AppColors.primaryColors,
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-        SizedBox(height: 32),
-        Text(
+        SvgPicture.asset('images/blue_logo.svg'),
+        const SizedBox(height: 32),
+        const Text(
           'YESAREEM SOLUTIONS PRIVATE LIMITED, \nestablished in 2023, is an Ed-Tech company.\nFocused on making mathematics accessible\nand eliminating associated learning stigmas.',
           style: TextStyle(
             color: Colors.black,
@@ -594,8 +605,8 @@ class Footer extends StatelessWidget {
             fontWeight: FontWeight.w400,
           ),
         ),
-        SizedBox(height: 24),
-        Row(
+        const SizedBox(height: 24),
+        const Row(
           children: [
             Icon(
               Icons.mail,
@@ -612,8 +623,8 @@ class Footer extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 8),
-        Row(
+        const SizedBox(height: 8),
+        const Row(
           children: [
             Icon(
               Icons.phone,
@@ -630,7 +641,7 @@ class Footer extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 32),
+        const SizedBox(height: 32),
       ],
     );
   }
@@ -711,14 +722,7 @@ class Header extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            'Yesareem Learning',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
+          SvgPicture.asset('images/logo.svg'),
           if (MediaQuery.of(context).size.width < 1050)
             IconButton(
                 onPressed: () {},
