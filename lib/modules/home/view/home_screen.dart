@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yesareem_website/Constants/app_colors.dart';
 import 'package:yesareem_website/Constants/common_header_and_footer.dart';
@@ -17,38 +18,119 @@ class _HomeScreenState extends State<HomeScreen> {
     return CommonHeadAndFooter(
       child: Column(
         children: [
-          Container(
-            color: AppColors.primaryColors,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width > 1300
-                        ? 1250
-                        : MediaQuery.of(context).size.width > 1050
-                            ? 750
-                            : 350,
-                    child: MediaQuery.of(context).size.width > 1050
-                        ? Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              topCardLeft(context, 3),
-                              topCardRight(),
-                            ],
-                          )
-                        : Column(
-                            children: [
-                              topCardLeft(context, 1),
-                              const SizedBox(height: 32),
-                              topCardRight()
-                            ],
+          topCard(context),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24.0, vertical: 64),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width > 1300
+                      ? 1250
+                      : MediaQuery.of(context).size.width > 1050
+                          ? 750
+                          : 350,
+                  child: Column(
+                    children: [
+                      Text(
+                        'Our Featured Services',
+                        style: TextStyle(
+                          color: Color(0xFF1363C6),
+                          fontSize: 32,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color(0xFF1363C6),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(height: 64),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 359,
+                            height: 224,
+                            decoration: ShapeDecoration(
+                              color: Color(0xDBD9D9D9),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
                           ),
+                          if (MediaQuery.of(context).size.width > 1300)
+                            Container(
+                              width: 359,
+                              height: 224,
+                              decoration: ShapeDecoration(
+                                color: Color(0xDBD9D9D9),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                            ),
+                          if (MediaQuery.of(context).size.width > 1050)
+                            Container(
+                              width: 359,
+                              height: 224,
+                              decoration: ShapeDecoration(
+                                color: Color(0xDBD9D9D9),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-              ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container topCard(BuildContext context) {
+    return Container(
+      color: AppColors.primaryColors,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width > 1300
+                  ? 1250
+                  : MediaQuery.of(context).size.width > 1050
+                      ? 750
+                      : 350,
+              child: MediaQuery.of(context).size.width > 1050
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        topCardLeft(context, 3),
+                        topCardRight(),
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        topCardLeft(context, 1),
+                        const SizedBox(height: 32),
+                        topCardRight()
+                      ],
+                    ),
             ),
           ),
         ],
