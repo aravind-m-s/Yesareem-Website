@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:yesareem_website/modules/contact_us/view/contact_screen.dart';
+import 'package:yesareem_website/modules/home/view/home_screen.dart';
 
 // ignore: prefer_const_constructors
 PathUrlStrategy path = PathUrlStrategy();
@@ -26,16 +27,16 @@ class MainApp extends StatelessWidget {
       ),
       initialRoute: path.getPath(),
       title: "Yesareem",
-      routes: {'/': (context) => const ContactScreen()},
+      routes: {'/': (context) => const HomeScreen()},
       onGenerateRoute: (settings) {
         if (settings.name == '/') {
-          return MaterialPageRoute(builder: (_) => const ContactScreen());
+          return MaterialPageRoute(builder: (_) => const HomeScreen());
         }
         return null;
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
-          builder: (_) => const ContactScreen(),
+          builder: (_) => const HomeScreen(),
         );
       },
     );
