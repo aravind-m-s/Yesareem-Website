@@ -27,10 +27,15 @@ class MainApp extends StatelessWidget {
       ),
       initialRoute: path.getPath(),
       title: "Yesareem",
-      routes: {'/': (context) => const HomeScreen()},
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/contact': (context) => const ContactScreen(),
+      },
       onGenerateRoute: (settings) {
         if (settings.name == '/') {
           return MaterialPageRoute(builder: (_) => const HomeScreen());
+        } else if (settings.name == '/contact') {
+          return MaterialPageRoute(builder: (_) => const ContactScreen());
         }
         return null;
       },
