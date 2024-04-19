@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:yesareem_website/Constants/app_colors.dart';
 
 class CommonHeadAndFooter extends StatelessWidget {
@@ -213,14 +214,20 @@ class Footer extends StatelessWidget {
         const SizedBox(height: 8),
         Row(
           children: [
-            const Text(
-              "Register Now",
-              style: TextStyle(
-                decoration: TextDecoration.underline,
-                decorationColor: AppColors.primaryColors,
-                color: Color(0xFF1363C6),
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () {
+                launchUrlString(
+                    'https://docs.google.com/forms/d/e/1FAIpQLSckJ6BLJws4CwIEeEap7fe0Gwp4W5X2vFfSgnFx6u8yaLsuNA/viewform');
+              },
+              child: const Text(
+                "Register Now",
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  decorationColor: AppColors.primaryColors,
+                  color: Color(0xFF1363C6),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
             const SizedBox(width: 8),
@@ -382,18 +389,23 @@ class Header extends StatelessWidget {
                   color: Colors.white,
                 ))
           else
-            const Row(
+            Row(
               children: [
-                Text(
-                  'Home',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/');
+                  },
+                  child: const Text(
+                    'Home',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
-                SizedBox(width: 16),
-                Text(
+                const SizedBox(width: 16),
+                const Text(
                   'Courses',
                   style: TextStyle(
                     color: Colors.white,
@@ -401,8 +413,8 @@ class Header extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(width: 16),
-                Text(
+                const SizedBox(width: 16),
+                const Text(
                   'Services',
                   style: TextStyle(
                     color: Colors.white,
@@ -410,13 +422,18 @@ class Header extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(width: 16),
-                Text(
-                  'Contact Us',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
+                const SizedBox(width: 16),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/contact');
+                  },
+                  child: const Text(
+                    'Contact Us',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 )
               ],

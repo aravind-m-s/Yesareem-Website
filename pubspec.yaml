@@ -1,10 +1,10 @@
 name: yesareem_website
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.1.2 <4.0.0'
+  sdk: ">=3.1.2 <4.0.0"
 
 dependencies:
   flutter:
@@ -17,6 +17,7 @@ dependencies:
   http: ^1.1.0
   flutter_rating_stars: ^1.0.3+4
   flutter_svg:
+  url_launcher: ^6.2.6
 
 dev_dependencies:
   flutter_test:
@@ -27,27 +28,26 @@ flutter:
   uses-material-design: true
 
 assets:
-    - assets/images/
-
+  - assets/images/
 
 fonts:
-    - family: Outfit
-      fonts:
-        - asset: assets/fonts/Outfit-Thin.ttf
-          weight: 100
-        - asset: assets/fonts/Outfit-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/Outfit-Light.ttf
-          weight: 300
-        - asset: assets/fonts/Outfit-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Outfit-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Outfit-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Outfit-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Outfit-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/Outfit-Black.ttf
-          weight: 900
+  - family: Outfit
+    fonts:
+      - asset: assets/fonts/Outfit-Thin.ttf
+        weight: 100
+      - asset: assets/fonts/Outfit-ExtraLight.ttf
+        weight: 200
+      - asset: assets/fonts/Outfit-Light.ttf
+        weight: 300
+      - asset: assets/fonts/Outfit-Regular.ttf
+        weight: 400
+      - asset: assets/fonts/Outfit-Medium.ttf
+        weight: 500
+      - asset: assets/fonts/Outfit-SemiBold.ttf
+        weight: 600
+      - asset: assets/fonts/Outfit-Bold.ttf
+        weight: 700
+      - asset: assets/fonts/Outfit-ExtraBold.ttf
+        weight: 800
+      - asset: assets/fonts/Outfit-Black.ttf
+        weight: 900
