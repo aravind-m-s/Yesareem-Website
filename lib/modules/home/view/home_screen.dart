@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           : 350,
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Our Featured Services',
                         style: TextStyle(
                           color: Color(0xFF1363C6),
@@ -42,8 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: 8),
-                      Text(
+                      const SizedBox(height: 8),
+                      const Text(
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SizedBox(height: 64),
+                      const SizedBox(height: 64),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 359,
                             height: 224,
                             decoration: ShapeDecoration(
-                              color: Color(0xDBD9D9D9),
+                              color: const Color(0xDBD9D9D9),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: 359,
                               height: 224,
                               decoration: ShapeDecoration(
-                                color: Color(0xDBD9D9D9),
+                                color: const Color(0xDBD9D9D9),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: 359,
                               height: 224,
                               decoration: ShapeDecoration(
-                                color: Color(0xDBD9D9D9),
+                                color: const Color(0xDBD9D9D9),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -93,6 +93,347 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+              ),
+            ],
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 100),
+            color: const Color(0xFFF1F0F0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                DefaultTabController(
+                  length: MediaQuery.of(context).size.width > 1300
+                      ? 4
+                      : MediaQuery.of(context).size.width > 1050
+                          ? 3
+                          : 2,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width > 1300
+                        ? 1250
+                        : MediaQuery.of(context).size.width > 1050
+                            ? 750
+                            : 350,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TabBar(
+                          indicatorColor: AppColors.primaryColors,
+                          tabs: [
+                            const SizedBox(
+                              height: 40,
+                              child: Text(
+                                'Mathematics',
+                                style: TextStyle(
+                                  color: Color(0xFF1363C6),
+                                  fontSize: 15,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 40,
+                              child: Text(
+                                'Physics',
+                                style: TextStyle(
+                                  color: Color(0xFF1363C6),
+                                  fontSize: 15,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                            if (MediaQuery.of(context).size.width > 1300)
+                              const SizedBox(
+                                height: 40,
+                                child: Text(
+                                  'Chemistry',
+                                  style: TextStyle(
+                                    color: Color(0xFF1363C6),
+                                    fontSize: 15,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                            if (MediaQuery.of(context).size.width > 1050)
+                              const SizedBox(
+                                height: 40,
+                                child: Text(
+                                  'Biology',
+                                  style: TextStyle(
+                                    color: Color(0xFF1363C6),
+                                    fontSize: 15,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              )
+                          ],
+                        ),
+                        const SizedBox(height: 32),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 359,
+                              height: 224,
+                              decoration: ShapeDecoration(
+                                color: const Color(0xDBD9D9D9),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                            ),
+                            if (MediaQuery.of(context).size.width > 1300)
+                              Container(
+                                width: 359,
+                                height: 224,
+                                decoration: ShapeDecoration(
+                                  color: const Color(0xDBD9D9D9),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              ),
+                            if (MediaQuery.of(context).size.width > 1050)
+                              Container(
+                                width: 359,
+                                height: 224,
+                                decoration: ShapeDecoration(
+                                  color: const Color(0xDBD9D9D9),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24.0, vertical: 64),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width > 1300
+                      ? 1250
+                      : MediaQuery.of(context).size.width > 1050
+                          ? 750
+                          : 350,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Our Activities and Events',
+                        style: TextStyle(
+                          color: Color(0xFF1363C6),
+                          fontSize: 32,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const SizedBox(height: 64),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                width: 359,
+                                height: 224,
+                                decoration: ShapeDecoration(
+                                  color: const Color(0xDBD9D9D9),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              const Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Mathematical Camps',
+                                    style: TextStyle(
+                                      color: Color(0xFF282828),
+                                      fontSize: 20,
+                                      fontFamily: 'Inter',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(width: 8),
+                                  Icon(
+                                    Icons.arrow_forward,
+                                    color: AppColors.primaryColors,
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          if (MediaQuery.of(context).size.width > 1300)
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 359,
+                                  height: 224,
+                                  decoration: ShapeDecoration(
+                                    color: const Color(0xDBD9D9D9),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 8),
+                                const Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Exhibitions',
+                                      style: TextStyle(
+                                        color: Color(0xFF282828),
+                                        fontSize: 20,
+                                        fontFamily: 'Inter',
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    SizedBox(width: 8),
+                                    Icon(
+                                      Icons.arrow_forward,
+                                      color: AppColors.primaryColors,
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          if (MediaQuery.of(context).size.width > 1050)
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 359,
+                                  height: 224,
+                                  decoration: ShapeDecoration(
+                                    color: const Color(0xDBD9D9D9),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 8),
+                                const Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Educational Park',
+                                      style: TextStyle(
+                                        color: Color(0xFF282828),
+                                        fontSize: 20,
+                                        fontFamily: 'Inter',
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    SizedBox(width: 8),
+                                    Icon(
+                                      Icons.arrow_forward,
+                                      color: AppColors.primaryColors,
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 100),
+            color: const Color(0xFFF1F0F0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width > 1300
+                      ? 1250
+                      : MediaQuery.of(context).size.width > 1050
+                          ? 750
+                          : 350,
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Mission ',
+                        style: TextStyle(
+                          color: Color(0xFF737373),
+                          fontSize: 16,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text(
+                        'We find out and We cure it',
+                        style: TextStyle(
+                          color: Color(0xFF1363C6),
+                          fontSize: 24,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(height: 32),
+                      Text(
+                        'We are in the budding stage of fulfilling our vision of "Maths for All" into reality. We must harness the power of Mathematics because a world cannot progress without understanding the core concept of Maths. We at Yesareem Solutions unfold answers and conclusions to various challenging issues of Maths similar to a Doctor diagnosing and finding a cure for a medical ailment. Through meticulous exploring and research, we aim to transform challenges of Mathematics into opportunities for growth, understanding and advancement at all levels.',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Stack(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 70),
+                    color: AppColors.primaryColors,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width > 1300
+                              ? 1250
+                              : MediaQuery.of(context).size.width > 1050
+                                  ? 750
+                                  : 350,
+                          child: const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
