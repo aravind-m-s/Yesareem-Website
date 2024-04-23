@@ -405,12 +405,17 @@ class Header extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 16),
-                const Text(
-                  'Courses',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/courses');
+                  },
+                  child: const Text(
+                    'Courses',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 16),
