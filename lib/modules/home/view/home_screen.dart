@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:yesareem_website/Constants/app_colors.dart';
 import 'package:yesareem_website/Constants/common_header_and_footer.dart';
 
@@ -539,7 +540,7 @@ class _HomeScreenState extends State<HomeScreen> {
   SizedBox topCardLeft(BuildContext context, int divideBy) {
     return SizedBox(
       width: MediaQuery.of(context).size.width / divideBy,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -555,14 +556,13 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: 16),
           Text(
             'Let’s grow up \nwith “ Yesareem ” ',
-            style: TextStyle(
+            style: GoogleFonts.montserrat().copyWith(
               color: Colors.white,
               fontSize: 62,
-              fontFamily: 'Montserrat',
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 64),
+          SizedBox(height: 32),
           Text(
             'Unleash the full spectrum of mathematical brilliance with our all-encompassing \nlearning app. From the basics to the most advanced concepts, we guide you through every facet of mathematics.',
             style: TextStyle(

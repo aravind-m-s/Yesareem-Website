@@ -51,7 +51,6 @@ fonts:
         weight: 800
       - asset: assets/fonts/Inter-Black.ttf
         weight: 900
-
   - family: Montserrat
     fonts:
       - asset: assets/fonts/Montserrat-Thin.ttf
