@@ -29,25 +29,60 @@ class MainApp extends StatelessWidget {
       initialRoute: path.getPath(),
       title: "Yesareem",
       routes: {
-        '/': (context) => const HomeScreen(),
-        '/contact': (context) => const ContactScreen(),
-        '/courses': (context) => const CoursesScreen(),
+        '/': (context) => const MaintananceScreen(),
+        // '/contact': (context) => const ContactScreen(),
+        // '/courses': (context) => const CoursesScreen(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/') {
-          return MaterialPageRoute(builder: (_) => const HomeScreen());
-        } else if (settings.name == '/contact') {
-          return MaterialPageRoute(builder: (_) => const ContactScreen());
-        } else if (settings.name == '/courses') {
-          return MaterialPageRoute(builder: (_) => const CoursesScreen());
+          return MaterialPageRoute(builder: (_) => const MaintananceScreen());
         }
+        //  else if (settings.name == '/contact') {
+        //   return MaterialPageRoute(builder: (_) => const ContactScreen());
+        // } else if (settings.name == '/courses') {
+        //   return MaterialPageRoute(builder: (_) => const CoursesScreen());
+        // }
         return null;
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => const MaintananceScreen(),
         );
       },
+    );
+  }
+}
+
+class MaintananceScreen extends StatefulWidget {
+  const MaintananceScreen({super.key});
+
+  @override
+  State<MaintananceScreen> createState() => MaintananceScreenState();
+}
+
+class MaintananceScreenState extends State<MaintananceScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Under maintanace",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+              ),
+              Text(
+                "Sorry for the inconvenience the site will be up and running soon...",
+                style: TextStyle(fontSize: 24),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
